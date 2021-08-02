@@ -38,8 +38,141 @@ namespace BlueSportApp.Controllers
                 ListBanner = _bannerService.GetAll(),
                 ListProduct = _productService.GetAll(),
                 ListStore = _storeService.GetAll(),
+                ListCategoryModel = GetCategory(),
             };
+
             return View(homeViewModel);
+        }
+        //public IActionResult MenuCategory()
+        //{
+        //    return PartialView("~/Views/Shared/Common/_PartialHeader.cshtml", GetCategory());
+        //}
+
+        private List<Models.CategoryModel> GetCategory()
+        {
+            var dataDemo = new List<CategoryModel>() { 
+                new Models.CategoryModel()
+                {
+                    Id = 1,
+                    Name = "Nam",
+                    Level = 0,
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 2,
+                    Name = "Nữ",
+                    Level = 0,
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 3,
+                    Name = "Trẻ em",
+                    Level = 0,
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 4,
+                    Name = "Giày dép",
+                    Level = 1,
+                    ParentId = 1
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 5,
+                    Name = "Quần áo",
+                    Level = 1,
+                    ParentId = 1
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 6,
+                    Name = "Phụ kiện",
+                    Level = 1,
+                    ParentId = 1
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 7,
+                    Name = "Giày dép",
+                    Level = 1,
+                    ParentId = 2
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 8,
+                    Name = "Quần áo",
+                    Level = 1,
+                    ParentId = 2
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 9,
+                    Name = "Phụ kiện",
+                    Level = 1,
+                    ParentId = 2
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 10,
+                    Name = "Giày dép Nam",
+                    Level = 2,
+                    ParentId = 4
+                },
+                new Models.CategoryModel()
+                {
+                    Id = 11,
+                    Name = "Giày dép Nữ",
+                    Level = 2,
+                    ParentId = 7
+                },
+
+            };
+
+            var data = new List<CategoryModel>();
+
+            var ParentCategory = dataDemo.Where(c => c.Level == 0).ToList();
+            var AllSubCategory = dataDemo.Where(c => c.Level == 1).ToList();
+            var AllLastCategory = dataDemo.Where(c => c.Level == 2).ToList();
+
+            foreach(var item in ParentCategory)
+            {
+                var itemParent = new Models.CategoryModel() {
+                    Name = item.Name,
+                    Id = item.Id,
+                    Level = item.Level,
+                    ListSubCategory = new List<SubCategoryModel>()
+                };
+
+                var subCate = AllSubCategory.Where(c => c.ParentId == item.Id).ToList();
+
+                foreach(var sub in subCate)
+                {
+                    var itemsub = new Models.SubCategoryModel()
+                    {
+                        Name = sub.Name,
+                        Id = sub.Id,
+                        Level = sub.Level,
+                        ListLastCategory = new List<SubLastCategoryModel>()
+                    };
+
+                    var lastCate = AllLastCategory.Where(c => c.ParentId == sub.Id).ToList();
+
+                    foreach(var last in lastCate)
+                    {
+                        itemsub.ListLastCategory.Add(new Models.SubLastCategoryModel
+                        {
+                            Name = last.Name,
+                            Id = last.Id,
+                            Level = last.Level,
+                        });
+                    }
+
+                    itemParent.ListSubCategory.Add(itemsub);
+                }
+                data.Add(itemParent);
+            }
+
+            return data;
         }
 
         public IActionResult Privacy()
@@ -52,6 +185,8 @@ namespace BlueSportApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
 
     }
 }
