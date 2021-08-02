@@ -1,0 +1,18 @@
+﻿@model BlueSportApp.ViewModels.HomeViewModel
+
+@if (Model != null)
+{
+    <!-- Banner common -->
+    <div class="slider-banner owl-carousel">
+
+        @foreach (var item in Model.ListBanner)
+        {
+            <img src=@item.ImageUrl alt=@item.ImageAlt>
+        }
+
+        @*<img src="~/images/banner.jpeg" alt="Thể thao nam">
+            <img src="~/images/banner.jpeg" alt="Thể thao nam">
+            <img src="~/images/banner.jpeg" alt="Thể thao nam">*@
+    </div>
+    <!-- / Banner common -->
+}

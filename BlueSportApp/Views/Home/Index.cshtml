@@ -1,0 +1,1267 @@
+﻿@model BlueSportApp.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/css/global.css">
+<link rel="stylesheet" type="text/css" href="~/css/listing.css">
+<link rel="stylesheet" type="text/css" href="~/css/home.css">
+<section>
+
+    <!-- Banner common -->
+    <partial name="~/Views/Shared/Common/_PartialBanner.cshtml" />
+
+    <!-- / Banner common -->
+    <!-- Hot deal PROMO -->
+    <div class="promo">
+        <h2 class="promo__ttl fRoboto">HOT DEAL HÔM NAY</h2>
+        <ul class="common-tab">
+            <li class="active"><a href="#">TẤT CẢ</a></li>
+            <li><a href="#">XE ĐẠP</a></li>
+            <li><a href="#">CHẠY BỘ</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+            <li><a href="#">XE ĐẠP</a></li>
+            <li><a href="#">CHẠY BỘ</a></li>
+        </ul>
+        <div class="listproduct listproduct-promo">
+
+            @foreach (var item in Model.ListProduct)
+            {
+                <div class="item">
+                    <a href="#">
+                        <div class="item-wrap">
+                            <div class="item-label">
+                                <span class="lb-percent">@item.DiscountPercent</span>
+                                <span class="lb-tragop">@item.InstallmentPercent</span>
+                            </div>
+                            <div class="item-img">
+                                <img src="@item.ImageUrl" alt="@item.ImageAlt">
+                            </div>
+                        </div>
+                        <h3><span>@item.Brand</span>  @item.Name </h3>
+                        <div class="price">
+                            <p class="price-current">@item.PriceCurrent</p>
+                            <p class="price-old">@item.PriceOld</p>
+                        </div>
+                    </a>
+                    <div class="item-color">
+                        @*@foreach (var image in item.ListRelatedItem)
+                        {
+                            <a href="javascript:void(0)" class="item-color-img active">
+                                <img src="@image.ImageUrl" alt="@image.ImageAlt">
+                            </a>
+                        }*@
+                        <a href="javascript:void(0)" class="item-color-img active">
+                            <img src="~/images/img-color02.png" alt="test">
+                        </a>
+                        <a href="javascript:void(0)" class="item-color-img">
+                            <img src="~/images/img-color02.png" alt="test">
+                        </a>
+                        <a href="javascript:void(0)" class="item-color-img">
+                            <img src="~/images/img-color03.png" alt="test">
+                        </a>
+                    </div>
+                </div>
+            }
+            @*<div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>*@
+        </div>
+    </div>
+    <!-- / Hot deal PROMO -->
+    <!-- Thể thao nam -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/images/block_banner01.png" alt="Thể thao nam">
+        </div>
+        <ul class="common-tab">
+            <li class="active"><a href="#">NỔI BẬT</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+        </ul>
+        <div class="listproduct listproduct-block">
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ GIÀY DÉP NAM</span>
+        </a>
+    </div>
+    <!-- / Thể thao nam -->
+    <!-- Thể thao nữ -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/images/block_banner02.png" alt="Thể thao nữ">
+        </div>
+        <ul class="common-tab">
+            <li class="active"><a href="#">NỔI BẬT</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+        </ul>
+        <div class="listproduct listproduct-block">
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ ÁO - QUẦN NỮ</span>
+        </a>
+    </div>
+    <!-- / Thể thao nữ -->
+    <!-- Thể thao trẻ em -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/images/block_banner03.png" alt="Thể thao trẻ em">
+        </div>
+        <ul class="common-tab">
+            <li class="active"><a href="#">NỔI BẬT</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+        </ul>
+        <div class="listproduct listproduct-block">
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ GIÀY DÉP TRẺ EM</span>
+        </a>
+    </div>
+    <!-- / Thể thao trẻ em -->
+    <!-- Xe đạp -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/images/block_banner04.png" alt="Xe đạp">
+        </div>
+        <ul class="common-tab">
+            <li class="active"><a href="#">NỔI BẬT</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+        </ul>
+        <div class="listproduct listproduct-block">
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ XE ĐẠP NỔI BẬT</span>
+        </a>
+    </div>
+    <!-- / Xe đạp -->
+    <!-- Các môn thể thao -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/images/block_banner05.png" alt="Các môn thể thao">
+        </div>
+        <ul class="common-tab">
+            <li class="active"><a href="#">NỔI BẬT</a></li>
+            <li><a href="#">GIÀY DÉP</a></li>
+            <li><a href="#">ÁO - QUẦN</a></li>
+            <li><a href="#">DỤNG CỤ</a></li>
+        </ul>
+        <div class="listproduct listproduct-block">
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img02.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="item-wrap">
+                        <div class="item-label">
+                            <span class="lb-percent">-20%</span>
+                            <span class="lb-tragop">Góp 0%</span>
+                        </div>
+                        <div class="item-img">
+                            <img src="~/images/img01.png" alt="ADIDAS Adizero Takumi Sen 7 Tokyo">
+                        </div>
+                    </div>
+                    <h3><span>ADIDAS</span>  Adizero Takumi Sen 7 Tokyo </h3>
+                    <div class="price">
+                        <p class="price-current">6.964.000đ</p>
+                        <p class="price-old">8.205.000đ</p>
+                    </div>
+                </a>
+                <div class="item-color">
+                    <a href="javascript:void(0)" class="item-color-img active">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color02.png" alt="test">
+                    </a>
+                    <a href="javascript:void(0)" class="item-color-img">
+                        <img src="~/images/img-color03.png" alt="test">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ CÁC SẢN PHẨM CHẠY BỘ</span>
+        </a>
+    </div>
+    <!-- / Các môn thể thao -->
+
+    <div class="trademark">
+        <h2 class="trademark__ttl fRoboto">XEM SẢN PHẨM <br>CÁC THƯƠNG HIỆU NỔI TIẾNG</h2>
+        <div class="trademark__list owl-carousel">
+            <div class="item">
+                <p><img src="~/images/img_thuonghieu01.png" alt="thuong hieu" width="66" height="44"></p>
+                <p><img src="~/images/img_thuonghieu02.png" alt="thuong hieu" width="68" height="38"></p>
+                <p><img src="~/images/img_thuonghieu03.png" alt="thuong hieu" width="62" height="37"></p>
+                <p><img src="~/images/img_thuonghieu04.png" alt="thuong hieu" width="76" height="28"></p>
+                <p><img src="~/images/img_thuonghieu05.png" alt="thuong hieu" width="58" height="29"></p>
+                <p><img src="~/images/img_thuonghieu06.png" alt="thuong hieu" width="65" height="18"></p>
+            </div>
+            <div class="item">
+                <p><img src="~/images/img_thuonghieu01.png" alt="thuong hieu" width="66" height="44"></p>
+                <p><img src="~/images/img_thuonghieu02.png" alt="thuong hieu" width="68" height="38"></p>
+                <p><img src="~/images/img_thuonghieu05.png" alt="thuong hieu" width="58" height="29"></p>
+                <p><img src="~/images/img_thuonghieu06.png" alt="thuong hieu" width="65" height="18"></p>
+                <p><img src="~/images/img_thuonghieu03.png" alt="thuong hieu" width="62" height="37"></p>
+                <p><img src="~/images/img_thuonghieu04.png" alt="thuong hieu" width="76" height="28"></p>
+            </div>
+            <div class="item">
+                <p><img src="~/images/img_thuonghieu01.png" alt="thuong hieu" width="66" height="44"></p>
+                <p><img src="~/images/img_thuonghieu02.png" alt="thuong hieu" width="68" height="38"></p>
+                <p><img src="~/images/img_thuonghieu03.png" alt="thuong hieu" width="62" height="37"></p>
+                <p><img src="~/images/img_thuonghieu06.png" alt="thuong hieu" width="65" height="18"></p>
+            </div>
+        </div>
+        <div class="trademark__post owl-carousel">
+            <a href="#" class="post-item">
+                <img src="~/images/img_trademark.jpeg" alt="Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình">
+                <p>Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình</p>
+            </a>
+            <a href="#" class="post-item">
+                <img src="~/images/img_trademark.jpeg" alt="Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình">
+                <p>Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình</p>
+            </a>
+            <a href="#" class="post-item">
+                <img src="~/images/img_trademark.jpeg" alt="Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình">
+                <p>Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="visit">
+        <h2 class="visit__title fRoboto">GHÉ THĂM BLUESPORT</h2>
+        <p class="txt">Hiện mở bán 4 siêu thị tại TP. Hồ Chí Minh</p>
+        <div class="visit-checkbox">
+            <span></span>
+            <p>Tìm siêu thị gần bạn</p>
+        </div>
+        <div class="visit__list">
+            @foreach (var item in Model.ListStore)
+            {
+                <a href="#" class="item">
+                    <p class="txt-name">@item.Name</p>
+                    <div class="txt-address">
+                        <p>
+                            @item.Address
+                        </p>
+                        <span><i class="icon-visitmap"></i></span>
+                    </div>
+                </a>
+            }
+            @*<a href="#" class="item">
+            <p class="txt-name">Bluesport hàng xanh</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport quận 1</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport hàng xanh</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport quận 1</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport hàng xanh</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport quận 1</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport hàng xanh</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <p class="txt-name">Bluesport quận 1</p>
+            <div class="txt-address">
+                <p>
+                    294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh
+                    TP. Hồ Chí Minh
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>*@
+        </div>
+        <a href="javascript:void(0)" class="visit-btn">
+            <span>XEM THÊM 9 SIÊU THỊ</span>
+        </a>
+    </div>
+
+    <div class="commitment">
+        <ul>
+            <li>
+                <div class="li-icon">
+                    <i class="icon-chinhhang"></i>
+                </div>
+                <div class="li-content">
+                    <p class="txt-ttl">Chính hãng 100%</p>
+                    <p class="txt-ct">Hơn 100 thương hiệu nổi tiếng</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-icon">
+                    <i class="icon-mpgiaohang"></i>
+                </div>
+                <div class="li-content">
+                    <p class="txt-ttl">Miễn phí giao hàng</p>
+                    <p class="txt-ct">Cho đơn hàng trên 500.000đ</p>
+                </div>
+            </li>
+            <li>
+                <div class="li-icon">
+                    <i class="icon-doi1"></i>
+                </div>
+                <div class="li-content">
+                    <p class="txt-ttl">1 đổi 1 trong vòng 1 năm</p>
+                    <p class="txt-ct">Tại 200 cửa hàng trên toàn quốc</p>
+                    <a href="#" class="txt-link">xem chi tiết</a>
+                </div>
+            </li>
+            <li>
+                <div class="li-icon">0%</div>
+                <div class="li-content">
+                    <p class="txt-ttl">Trả góp 0%</p>
+                    <p class="txt-ct">Qua thẻ hoặc duyệt hồ sơ<br>với mọi sản phẩm trên 1.5 triệu</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".trademark__list").owlCarousel({
+            items: 1,
+            dots: true,
+            nav: false,
+        });
+        $(".trademark__post").owlCarousel({
+            items: 1,
+            dots: true,
+            nav: false,
+        });
+        $('.visit-checkbox').click(function () {
+            $('.visit-checkbox span').toggleClass('act');
+        });
+        $(".slider-banner").owlCarousel({
+            loop: true,
+            items: 1,
+            dots: true,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+
+        $('.visit-btn').click(function () {
+            $('.visit__list').toggleClass('open');
+            $(this).toggleClass('act');
+            document.querySelector('.visit-btn span').innerHTML = "XEM THÊM 9 SIÊU THỊ";
+            document.querySelector('.visit-btn.act span').innerHTML = "THU GỌN";
+
+        });
+    });
+</script>
