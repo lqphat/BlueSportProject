@@ -7,11 +7,25 @@ namespace BlueSportApp.ModelsDTO
 {
     public class StoreDTO
     {
+        public string id { get; set; }
+
         public string name { get; set; }
 
         public string address { get; set; }
 
         public string webAddress { get; set; }
+
+        public string phoneNumber { get; set; }
+
+        public int timeOpen { get; set; }
+
+        public int timeClose { get; set; }
+
+        public string imageMapSourse { get; set; }
+
+        public List<string> images { get; set; }
+
+
     }
 
     public static class StoreDTOExt
@@ -22,6 +36,12 @@ namespace BlueSportApp.ModelsDTO
             {
                 Name = storeDTO.name,
                 Address = storeDTO.GetAddress(),
+                imageMapSourse = storeDTO.imageMapSourse,
+                phoneNumber = storeDTO.phoneNumber,
+                timeClose = storeDTO.timeClose, 
+                timeOpen = storeDTO.timeOpen,
+                listImage = storeDTO.images,
+                Id = storeDTO.id
             };
         }
 

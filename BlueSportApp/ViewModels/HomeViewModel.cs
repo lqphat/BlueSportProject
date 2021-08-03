@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BlueSportApp.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : CommonViewModel
     {
         public List<Models.BannerModel> ListBanner { get; set; }
 
@@ -15,15 +15,12 @@ namespace BlueSportApp.ViewModels
 
         public List<Models.RelatedItemModel> ListRelatedItem { get; set; }
 
-        public List<Models.CategoryModel> ListCategory { get; set; }
-
         public HomeViewModel()
         {
             ListBanner = new List<Models.BannerModel>();
             ListStore = new List<Models.StoreModel>();
             ListProduct = new List<Models.ProductModel>();
             ListRelatedItem = new List<Models.RelatedItemModel>();
-            ListCategory = new List<Models.CategoryModel>();
         }
     }
 }

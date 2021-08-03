@@ -40,5 +40,26 @@ namespace BlueSportApp.Services.Store
             return data;
             #endregion
         }
+
+        public StoreModel GetById(string id)
+        {
+            #region Declare data
+            #endregion
+
+            #region Get data from API to DTO
+            var response= _apiService.GetDataFromAPI($"{_pathAPI}/{id}");
+
+            var listStore = GetAll();
+            var dataDto = listStore.Where(s => s.Id == id).FirstOrDefault();
+
+            #endregion
+
+            #region Mapping data from DTO to Model
+            #endregion
+
+            #region Return data
+            return dataDto;
+            #endregion
+        }
     }
 }

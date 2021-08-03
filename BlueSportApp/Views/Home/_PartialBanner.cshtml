@@ -1,11 +1,9 @@
-﻿@model BlueSportApp.ViewModels.HomeViewModel
-
-@if (Model != null)
+﻿@if (Model != null)
 {
     <!-- Banner common -->
     <div class="slider-banner owl-carousel">
 
-        @foreach (var item in Model.ListBanner)
+        @foreach (var item in Model)
         {
             <img src=@item.ImageUrl alt=@item.ImageAlt>
         }
