@@ -11,26 +11,7 @@ namespace BlueSportApp.Models
         public string Name { get; set; }
         public int ParentId { get; set; }
         public int Level { get; set; }
-        public List<SubCategoryModel> ListSubCategory { get; set; }
+        public List<CategoryModel> ListSubCategory { get; set; }
     }
-
-    public class SubCategoryModel
-    {   
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int ParentId { get; set; }
-        public int Level { get; set; }
-        public List<SubLastCategoryModel> ListLastCategory { get; set; }
-    }
-
-    public class SubLastCategoryModel
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int ParentId { get; set; }
-        public int Level { get; set; }
-    }
-    
-
 
 }

@@ -31,7 +31,7 @@ namespace BlueSportApp.ModelsDTO
     {
         public static Models.ProductModel ToProductModel(this ModelsDTO.ProductDTO productDTO)
         {
-            return new Models.ProductModel
+            return new Models.ProductModel()
             {
                 Name = productDTO.name,
                 ImageUrl = productDTO.imageUrl,

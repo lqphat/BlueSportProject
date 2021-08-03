@@ -24,9 +24,9 @@
     <div class="main-menu">
         <nav class="gNavi">
             <ul class="list-menu">
-                @if (Model.ListCategoryModel != null)
+                @if (Model.ListCategory != null)
                 {
-                    @foreach (var item in Model.ListCategoryModel)
+                    @foreach (var item in Model.ListCategory)
                     {
                         <li class="arr-submenu">
                             <p class="open-sub"><a href="#">@item.Name</a></p>
@@ -38,14 +38,14 @@
                                         <li class="arr-submenu">
                                             <p class="open-sub"><a href="#">@sub.Name</a></p>
                                             <ul class="sub-submenu">
-                                                @if (sub.ListLastCategory != null)
+                                                @if (sub.ListSubCategory != null)
                                                 {
-                                                    @foreach (var last in sub.ListLastCategory)
+                                                    @foreach (var last in sub.ListSubCategory)
                                                     {
                                                         <li><a href="#">@last.Name</a></li>
                                                     }
                                                 }
-
+                                                <li><a href="#">Xem tất cả giày dép</a></li>
                                             </ul>
                                         </li>
                                     }

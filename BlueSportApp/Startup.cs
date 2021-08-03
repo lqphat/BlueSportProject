@@ -1,5 +1,6 @@
 using BlueSportApp.Services.API;
 using BlueSportApp.Services.Banner;
+using BlueSportApp.Services.Category;
 using BlueSportApp.Services.Product;
 using BlueSportApp.Services.Store;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,8 @@ namespace BlueSportApp
             services.AddTransient<IStoreService, StoreService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IAPIService, APIService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+
 
         }
 

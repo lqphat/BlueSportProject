@@ -15,7 +15,7 @@ namespace BlueSportApp.ViewModels
 
         public List<Models.RelatedItemModel> ListRelatedItem { get; set; }
 
-        public List<Models.CategoryModel> ListCategoryModel { get; set; }
+        public List<Models.CategoryModel> ListCategory { get; set; }
 
         public HomeViewModel()
         {
@@ -23,7 +23,7 @@ namespace BlueSportApp.ViewModels
             ListStore = new List<Models.StoreModel>();
             ListProduct = new List<Models.ProductModel>();
             ListRelatedItem = new List<Models.RelatedItemModel>();
-            ListCategoryModel = new List<Models.CategoryModel>();
+            ListCategory = new List<Models.CategoryModel>();
         }
     }
 }
